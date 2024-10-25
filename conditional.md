@@ -1,0 +1,136 @@
+Here’s a detailed explanation of conditional statements in SystemVerilog, focusing on `if-else` and `case` statements, including their definitions, characteristics, usage, and examples.
+
+## 1. If-Else Statement
+
+### Definition
+The `if-else` statement is a conditional statement that allows you to execute specific blocks of code based on whether a condition evaluates to true or false.
+
+### Characteristics
+- **Syntax**:
+  ```systemverilog
+  if (condition) begin
+      // code to execute if condition is true
+  end else begin
+      // code to execute if condition is false
+  end
+  ```
+- **Nested If-Else**: You can nest `if-else` statements for multiple conditions.
+- **Synthesizable**: The `if-else` statement is synthesizable and can be used in both combinational and sequential logic.
+
+### Usage
+- **Control Flow**: To make decisions based on the evaluation of conditions.
+- **Initialization**: To initialize values conditionally.
+
+### Example
+```systemverilog
+module if_else_example;
+    logic [3:0] a, b;
+    logic [3:0] max_value;
+
+    initial begin
+        a = 4'b1001; // Example value
+        b = 4'b0110; // Example value
+
+        // If-else statement to determine the maximum value
+        if (a > b) begin
+            max_value = a;
+        end else begin
+            max_value = b;
+        end
+
+        $display("Max Value: %b", max_value); // Should output 1001
+    end
+endmodule
+```
+
+### Execution Flow
+1. The values of `a` and `b` are initialized.
+2. The `if` condition checks if `a` is greater than `b`. If true, `max_value` is set to `a`; otherwise, it is set to `b`.
+
+---
+
+## 2. Case Statement
+
+### Definition
+The `case` statement is a conditional statement that allows you to execute specific blocks of code based on the value of a single expression. It is useful for handling multiple conditions that are mutually exclusive.
+
+### Characteristics
+- **Syntax**:
+  ```systemverilog
+  case (expression)
+      value1: begin
+          // code to execute if expression matches value1
+      end
+      value2: begin
+          // code to execute if expression matches value2
+      end
+      default: begin
+          // code to execute if no values match
+      end
+  endcase
+  ```
+- **Multiple Values**: You can match multiple values in a single case item.
+- **Default Case**: The `default` case handles any unmatched values.
+- **Synthesizable**: The `case` statement is synthesizable and commonly used in hardware designs.
+
+### Usage
+- **Decisions Based on Single Variable**: Ideal for situations where a single variable can take on multiple values.
+- **State Machines**: Often used in state machine implementations to handle various states.
+
+### Example
+```systemverilog
+module case_example;
+    logic [1:0] state;
+    logic [7:0] output;
+
+    initial begin
+        state = 2'b01; // Example state
+
+        // Case statement to determine output based on state
+        case (state)
+            2'b00: output = 8'b00000001; // State 0
+            2'b01: output = 8'b00000010; // State 1
+            2'b10: output = 8'b00000100; // State 2
+            2'b11: output = 8'b00001000; // State 3
+            default: output = 8'b00000000; // Default case
+        endcase
+
+        $display("Output: %b", output); // Should output 00000010
+    end
+endmodule
+```
+
+### Execution Flow
+1. The `state` variable is initialized to `2'b01`.
+2. The `case` statement checks the value of `state`. Since it matches `2'b01`, the output is set to `8'b00000010`.
+
+---
+
+## Summary
+### If-Else Statement
+- **Definition**: Conditional statement to execute code based on whether a condition is true or false.
+- **Syntax**: 
+  ```systemverilog
+  if (condition) begin
+      // code for true
+  end else begin
+      // code for false
+  end
+  ```
+- **Usage**: Decision-making for control flow and initialization.
+- **Example**: Finding the maximum value between two variables.
+
+### Case Statement
+- **Definition**: Conditional statement to execute code based on the value of a single expression.
+- **Syntax**:
+  ```systemverilog
+  case (expression)
+      value1: // code for value1
+      value2: // code for value2
+      default: // code for default
+  endcase
+  ```
+- **Usage**: Handling multiple conditions for a single variable, often used in state machines.
+- **Example**: Determining output based on the current state.
+
+Both `if-else` and `case` statements are fundamental constructs in SystemVerilog that help control the flow of execution based on conditions. The choice between using an `if-else` statement and a `case` statement often depends on the specific application and the nature of the conditions being evaluated.
