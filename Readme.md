@@ -5,29 +5,29 @@ Introduction
 |
 |-- Basics of SystemVerilog
 |   |-- Data Types
-|   |   |-- Built-in Types (logic, bit, reg, etc.)
-|   |   |-- Vectors and Arrays
-|   |   |-- Packed and Unpacked Arrays
+|   |   |-- 1. Built-in Types (logic, bit, reg, etc.)
+|   |   |-- 2. Vectors and Arrays
+|   |   |-- 3. Packed and Unpacked Arrays
 |   |
 |   |-- Operators and Expressions
-|   |   |-- Arithmetic, Logical, Bitwise, Relational
-|   |   |-- Shift, Reduction, Concatenation
-|   |   |-- Conditional Expressions
+|   |   |-- 4. Arithmetic, Logical, Bitwise, Relational
+|   |   |-- 5. Shift, Reduction, Concatenation
+|   |   |-- 6. Conditional Expressions
 |   |
 |   |-- Procedural Blocks
-|       |-- Initial and Always Blocks
-|       |-- Assignments (blocking, non-blocking)
-|       |-- Timing Control (delay, event control)
+|       |-- 7. Initial and Always Blocks
+|       |-- 8. Assignments (blocking, non-blocking)
+|       |-- 9. Timing Control (delay, event control)
 |
 |-- Control Flow
-|   |-- Conditional Statements (if-else, case)
-|   |-- Loops (for, while, repeat, forever)
-|   |-- Special Constructs (unique, priority, foreach)
+|   |-- 10. Conditional Statements (if-else, case)
+|   |-- 11. Loops (for, while, repeat, forever)
+|   |-- 12. Special Constructs (unique, priority, foreach)
 |
 |-- Advanced Data Types
-|   |-- Structs and Unions
-|   |-- Enums and Typedef
-|   |-- Parameterized Types (type parameters, typedef)
+|   |-- 13. Structs and Unions
+|   |-- 14. Enums and Typedef
+|   |-- 15. Parameterized Types (type parameters, typedef)
 |
 |-- Interface and Modularity
 |   |-- Interfaces and Modports
